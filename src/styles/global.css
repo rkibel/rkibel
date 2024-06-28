@@ -5,3 +5,7 @@
 html {
     scroll-behavior: smooth;
 }
+
+.typed-cursor {
+    @apply text-shiny-green text-2xl font-mono;
+}

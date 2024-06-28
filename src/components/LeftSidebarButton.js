@@ -1,5 +1,4 @@
 import React from "react"
-import Radium from "radium";
 
 const buttonStyleLi = {
 }
@@ -20,4 +19,4 @@ const LeftSidebarButton = ({ href, label, svg_paths }) => {
     );
 };
   
-export default Radium(LeftSidebarButton);
+export default LeftSidebarButton;

@@ -1,11 +1,11 @@
 import React from "react"
-import Typical from 'react-typical';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import LeftSideBar from "../components/LeftSidebar"
 import HeroButton from "../components/HeroButton"
 import NavBar from "../components/NavBar";
 import ContactForm from "../components/ContactForm";
+import TypedText from "../components/TypedText";
 
 const sidebarWidth = "200px";
 const navbarHeight = "100px";
@@ -15,7 +15,6 @@ const style = {
     marginLeft: sidebarWidth,
   },
   hero : {
-    paddingTop: navbarHeight,
     justifyContent: "space-between",
   },
 
@@ -25,11 +24,10 @@ const mergedStyles = { ...style.hero, ...style.shiftRight};
 
 const IndexPage = () => {
   return (
-    <body>
-      <LeftSideBar width = {sidebarWidth}/>
-      <NavBar height = {navbarHeight}/>
-      <main>
+    <>
         <div id="hero" className="min-h-screen bg-gradient-to-b from-grad-upper to-grad-lower">
+        <NavBar height = {navbarHeight}/>
+        <LeftSideBar width = {sidebarWidth}/>
           <div className="flex pr-32" style={mergedStyles}>
             <div className="overflow-hidden relative mt-24" style={{minWidth: "500px"}}>
               <h2 className="text-3xl font-bold text-slate-600">Hello, my name is</h2>
@@ -37,7 +35,11 @@ const IndexPage = () => {
 
               <div className="py-8 flex space-x-3 items-center">
                 <p className="text-slate-600 text-xl font-bold"> I specialize in</p>
-                <Typical className="text-shiny-green text-2xl font-bold font-mono" steps={["", 2500, "Computer Vision.", 2500, "", 1000, "Natural Language Processing.", 2500, "", 1000, "Back-End Development.", 2500, "", 1000]} loop={Infinity}/>
+                <TypedText strings={[
+                  "Computer Vision.",
+                  "Natural Language Processing.",
+                  "Back-End Development.",
+                ]}/>
               </div>
               
               <div className="py-8 flex space-x-12">
@@ -60,13 +62,10 @@ const IndexPage = () => {
             <ContactForm/>
           </div>
         </div>
-      </main>
-    </body>
+    </>
   )
 }
 
 export default IndexPage
 
 export const Head = () => <title>Ron Kibel</title>
-
-

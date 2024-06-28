@@ -1,20 +1,4 @@
 import React from "react"
-import Radium from "radium";
-
-const styling = {
-    letterSpacing: "2px",
-    backgroundColor: "#fff",
-    boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.1)",
-    transition: "all 0.3s ease 0s",
-    ":hover" : {
-        backgroundColor: "#23c483",
-        boxShadow: "0px 15px 20px rgba(46, 229, 157, 0.4)",
-        transform: "translateY(-5px)",
-    },
-    ":active" : {
-        transform: "translateY(-2px)"
-    }
-}
 
 const HeroButton = ({ text, fileOnDownload }) => {
     const handleClick = () => {
@@ -32,10 +16,10 @@ const HeroButton = ({ text, fileOnDownload }) => {
     };
 
     return (
-        <button className= "text-slate-600 rounded-xl font-semibold hover:text-white text-sm px-10 py-4 uppercase" style={styling} onClick={handleClick}>
+        <button className= "text-sm px-10 py-4 uppercase tracking-widest bg-white shadow-lg text-slate-600 rounded-xl font-semibold hover:text-white hover:bg-shiny-green hover:-translate-y-2 transition-all ease-in-out duration-300 transform active:translate-y-5" onClick={handleClick}>
             {text}
         </button>
     );
 };
 
-export default Radium(HeroButton);
+export default HeroButton;
