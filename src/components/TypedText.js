@@ -11,7 +11,7 @@ const TypedText = ({ strings }) => {
       backSpeed: 50,
       backDelay: 1500,
       startDelay: 1500,
-      loop: true,
+      loop: false,
       showCursor: true,
       cursorChar: '|',
     };

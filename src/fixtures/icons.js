@@ -1,4 +1,4 @@
-const sideBarData = [
+const iconData = [
     {
         label : "GitHub",
         href : "https://github.com/rkibel",
@@ -38,4 +38,4 @@ const sideBarData = [
     },
 ]
 
-export default sideBarData;
+export default iconData;

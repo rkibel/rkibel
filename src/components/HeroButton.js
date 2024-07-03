@@ -3,13 +3,8 @@ import React from "react"
 const HeroButton = ({ text, fileOnDownload }) => {
     const handleClick = () => {
         const link = document.createElement('a');
-        if (text.toUpperCase() === "CONTACT") {
-            link.href = "#contact";
-        }
-        else if (fileOnDownload) {
-            link.href = fileOnDownload;
-            link.download = fileOnDownload.split('/').pop();
-        }
+        link.href = fileOnDownload;
+        link.download = fileOnDownload.split('/').pop();
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
