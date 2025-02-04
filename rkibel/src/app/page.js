@@ -12,16 +12,32 @@ const scrollToElement = (elementId) => {
 export default function Home() {
   return (
     <div className="min-h-screen bg-primary text-white p-8">
-      <div className="max-w-full mx-auto relative pl-[325px]">
+      <div className="max-w-full mx-auto relative pl-[325px] text-sm">
+        {/* Logo and Name */}
+        <div className="fixed top-8 left-24 pl-5 flex items-center space-x-4">
+          <a href="/" className="flex items-center space-x-4">
+            <Image
+              src="/logo.png"
+              alt="RK Logo"
+              width={80}
+              height={40}
+              className=""
+            />
+            <span className="text-secondary font-mono text-2xl font-bold tracking-widest">
+              RKIBEL
+            </span>
+          </a>
+        </div>
+
         {/* Navigation */}
-        <nav className="fixed top-[calc(50%-75px)] left-32 -translate-y-1/2">
+        <nav className="fixed top-[300px] px-2 left-32 -translate-y-1/2">
           <ul className="space-y-6 text-muted">
             <li>
               <button
                 onClick={() => scrollToElement('home')}
                 className="font-mono hover:text-accent transition-colors cursor-pointer"
               >
-                /home
+                # home
               </button>
             </li>
             <li>
@@ -29,7 +45,7 @@ export default function Home() {
                 onClick={() => scrollToElement('about')}
                 className="font-mono hover:text-accent transition-colors cursor-pointer"
               >
-                /about
+                # about
               </button>
             </li>
             <li>
@@ -37,7 +53,7 @@ export default function Home() {
                 onClick={() => scrollToElement('experience')}
                 className="font-mono hover:text-accent transition-colors cursor-pointer"
               >
-                /experience
+                # experience
               </button>
             </li>
             <li>
@@ -45,7 +61,7 @@ export default function Home() {
                 onClick={() => scrollToElement('projects')}
                 className="font-mono hover:text-accent transition-colors cursor-pointer"
               >
-                /projects
+                # projects
               </button>
             </li>
             <li>
@@ -53,7 +69,7 @@ export default function Home() {
                 onClick={() => scrollToElement('publications')}
                 className="font-mono hover:text-accent transition-colors cursor-pointer"
               >
-                /publications
+                # publications
               </button>
             </li>
             <li>
@@ -61,14 +77,14 @@ export default function Home() {
                 onClick={() => scrollToElement('contact')}
                 className="font-mono hover:text-accent transition-colors cursor-pointer"
               >
-                /contact
+                # contact
               </button>
             </li>
           </ul>
         </nav>
 
         {/* Social Logos with trailing line */}
-        <ul className="fixed left-32 top-[calc(50%+200px)] flex flex-col items-center">
+        <ul className="fixed left-32 top-[calc(100%-220px)] flex flex-col items-center">
           <li className="mb-4">
             <a
               href="/resume.pdf"
@@ -128,152 +144,173 @@ export default function Home() {
           <li className="h-24 w-[2px] bg-muted opacity-40" />
         </ul>
 
-        {/* Main content */}
-        <main
-          id="home"
-          className="h-screen flex items-center justify-start pl-40 pr-40 gap-x-32"
-        >
-          {/* Text content */}
-          <div className="space-y-4 max-w-xl">
-            <h1 className="text-accent font-mono text-6xl font-bold">hi, i'm ron</h1>
-            <h2 className="text-secondary text-4xl py-8 font-mono">
-              I build AI solutions.
-            </h2>
-            <button
-              onClick={() => scrollToElement('contact')}
-              className="px-6 py-3 border-2 border-accent text-accent hover:bg-accent hover:text-primary transition-colors font-mono"
-            >
-              Contact Me
-            </button>
-          </div>
-
-          {/* Profile image container */}
-          <div className="relative w-[400px] h-[500px]">
-            <Image
-              src="/profile2.jpg"
-              alt="Ron Kibel"
-              fill
-              className="rounded-lg object-cover object-top"
-              priority
-            />
-          </div>
-        </main>
-
-        {/* About Section */}
-        <section id="about" className="min-h-screen flex items-center px-20">
-          <div className="max-w-3xl">
-            <h2 className="text-secondary text-4xl font-bold mb-8">About Me</h2>
-            <div className="text-muted text-xl space-y-4">
-              <p>
-                I'm pursuing my MS in Computer Science at UC Santa Barbara, focusing on AI/ML applications.
-                I'm especially passionate about Computer Vision in robotics and am currently researching 3D Reconstruction
-                and Depth Estimation at the UCSB Four Eyes Lab. Over the past three years, I've had the opportunity to work at ServiceNow as a software engineer,
-                most recently enhancing their search engine with multimodal features.
-              </p>
+        {/* Content wrapper - Add this div to standardize padding */}
+        <div className="ml-16 mr-8">
+          {/* Main content */}
+          <main
+            id="home"
+            className="h-screen flex items-center justify-start gap-x-32"
+          >
+            {/* Text content */}
+            <div className="space-y-4 max-w-xl">
+              <h1 className="text-accent font-mono text-6xl font-bold">hi, i'm ron</h1>
+              <h2 className="text-secondary text-4xl py-8 font-mono">
+                I build AI solutions.
+              </h2>
+              <button
+                onClick={() => scrollToElement('contact')}
+                className="px-6 py-3 border-2 border-accent text-md text-accent hover:bg-accent hover:text-primary transition-colors font-mono"
+              >
+                Contact Me &gt;
+              </button>
             </div>
-          </div>
-        </section>
 
-        {/* Experience Section */}
-        <section id="experience" className="min-h-screen flex items-center px-20">
-          <div className="max-w-3xl">
-            <h2 className="text-secondary text-4xl font-bold mb-8">Experience</h2>
-            <div className="text-muted text-xl space-y-8">
-              <div className="space-y-2">
-                <h3 className="text-2xl text-secondary">ServiceNow</h3>
-                <p className="text-accent">Software Engineering Intern - AI Search • May 2024 - Sep 2024</p>
-                <ul className="list-disc pl-4 space-y-2">
-                  <li>Developed and integrated image search features for ServiceNow's AI Search platform</li>
-                  <li>Enhanced search capabilities using embeddings, image captioning, and text extraction (OCR)</li>
-                  <li>Implemented hybrid indexing strategy with OpenCV, OpenAI CLIP, and Apache Tika</li>
-                </ul>
-              </div>
-
-              <div className="space-y-2">
-                <h3 className="text-2xl text-secondary">ServiceNow</h3>
-                <p className="text-accent">Software Engineering Intern - Developer Productivity • May 2022 - Sep 2023</p>
-                <ul className="list-disc pl-4 space-y-2">
-                  <li>Created end-to-end automation for code scan analyzers, reducing manual intervention by 85%</li>
-                  <li>Developed tools for project contributions and internal showcases</li>
-                  <li>Worked with client/server scripting and CI/CD pipelines using Jenkins</li>
-                </ul>
-              </div>
-
-              <div className="space-y-2">
-                <h3 className="text-2xl text-secondary">Centrify Corporation</h3>
-                <p className="text-accent">Test Automation Engineering Intern • Jan 2019 - Sep 2019</p>
-                <ul className="list-disc pl-4 space-y-2">
-                  <li>Automated complex API user provisioning systems for IdP/SP-initiated authentication</li>
-                  <li>Published documentation for authentication processes with step-by-step instructions</li>
-                  <li>Edited 500+ logos ensuring seamless integration with company portal design</li>
-                </ul>
-              </div>
+            {/* Profile image container */}
+            <div className="relative w-[400px] h-[500px]">
+              <Image
+                src="/profile.png"
+                alt="Ron Kibel"
+                fill
+                className="rounded-lg object-cover object-top"
+                priority
+              />
             </div>
-          </div>
-        </section>
+          </main>
 
-        {/* Projects Section */}
-        <section id="projects" className="min-h-screen flex items-center px-20">
-          <div className="max-w-3xl">
-            <h2 className="text-secondary text-4xl font-bold mb-8">Projects</h2>
-            <div className="text-muted text-xl space-y-8">
-              <div className="space-y-2">
-                <h3 className="text-2xl text-secondary">Decentralized Multi-Robot Mapping and Sensor Fusion</h3>
-                <p className="text-accent">UCSB Four Eyes Lab • Aug 2024 - Present</p>
-                <p>
-                  Researching robust multi-view stereo (MVS) schemes for multi-robot applications,
-                  focusing on noise modeling and communication optimization between robots.
-                </p>
+          {/* About Section */}
+          <section id="about" className="flex items-center py-16">
+            <div className="max-w-4xl">
+              <div className="flex items-center gap-4 mb-8">
+                <h2 className="text-secondary text-4xl font-mono font-bold"># about_me</h2>
+                <div className="h-[2px] w-60 bg-muted opacity-80 self-center ml-5" />
               </div>
-
-              <div className="space-y-2">
-                <h3 className="text-2xl text-secondary">Performance-Oriented Fluid Simulation</h3>
-                <p className="text-accent">UC3M Computer Architecture Lab • Aug 2023 - Dec 2023</p>
+              <div className="text-muted text-lg space-y-4 font-mono">
                 <p>
-                  Developed high-performance fluid simulation in C++ using CMake, optimizing particle
-                  collisions for realistic behavior in confined spaces.
+                  Welcome! I'm currently pursuing my MS in Computer Science at UC Santa Barbara, focusing on applications in AI and ML.
                 </p>
-              </div>
-
-              <div className="space-y-2">
-                <h3 className="text-2xl text-secondary">Markov-Style State Machines</h3>
-                <p className="text-accent">UCSB Math Directed Program • Dec 2022 - Jan 2023</p>
                 <p>
-                  Researched Markovian Models for partially observing agents, presenting findings
-                  in poster sessions.
+                  I'm especially passionate about Computer Vision in robotics and am currently researching 3D Reconstruction
+                  and Depth Estimation at the UCSB Four Eyes Lab
+                </p>
+                <p>
+                  Over the past three years, I've had the opportunity to work at ServiceNow as a software engineer,
+                  most recently enhancing their search engine with multimodal features.
                 </p>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Publications Section */}
-        <section id="publications" className="min-h-screen flex items-center px-20">
-          <div className="max-w-3xl">
-            <h2 className="text-secondary text-4xl font-bold mb-8">Publications</h2>
-            <div className="text-muted text-xl space-y-4">
-              <p>
-                Publications coming soon. Currently working on research in Computer Vision and 3D Reconstruction
-                at the UCSB Four Eyes Lab.
-              </p>
+          {/* Experience Section */}
+          <section id="experience" className="flex items-center py-16">
+            <div className="max-w-4xl">
+              <div className="flex items-center gap-4 mb-8">
+                <h2 className="text-secondary text-4xl font-mono font-bold"># professional_experience</h2>
+                <div className="h-[2px] w-60 bg-muted opacity-80 self-center ml-5" />
+              </div>
+              <div className="text-muted space-y-8 font-mono">
+                <div className="space-y-2">
+                  <h3 className="text-2xl text-accent">ServiceNow</h3>
+                  <p className="text-xl text-secondary">Software Engineering Intern - AI Search</p>
+                  <ul className="list-['>'] list-inside space-y-2 text-md">
+                    <li> Developed and integrated image search features for ServiceNow's AI Search platform</li>
+                    <li> Enhanced search capabilities using embeddings, image captioning, and text extraction (OCR)</li>
+                    <li> Implemented hybrid indexing strategy with OpenCV, OpenAI CLIP, and Apache Tika</li>
+                  </ul>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-2xl text-accent">ServiceNow</h3>
+                  <p className="text-xl text-secondary">Software Engineering Intern - Developer Productivity</p>
+                  <ul className="list-['>'] list-inside space-y-2 text-md">
+                    <li> Created end-to-end automation for code scan analyzers, reducing manual intervention by 85%</li>
+                    <li> Developed tools for project contributions and internal showcases</li>
+                    <li> Worked with client/server scripting and CI/CD pipelines using Jenkins</li>
+                  </ul>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-2xl text-accent">Centrify Corporation</h3>
+                  <p className="text-xl text-secondary">Test Automation Engineering Intern</p>
+                  <ul className="list-['>'] list-inside space-y-2 text-md">
+                    <li> Automated complex API user provisioning systems for IdP/SP-initiated authentication</li>
+                    <li> Published documentation for authentication processes with step-by-step instructions</li>
+                    <li> Edited 500+ logos ensuring seamless integration with company portal design</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="min-h-screen flex items-center px-20">
-          <div className="max-w-3xl w-full">
-            <h2 className="text-secondary text-4xl font-bold mb-8">Get In Touch</h2>
-            <div className="text-muted text-xl space-y-6">
-              <p>
-                I'm currently looking for new opportunities in AI/ML and Computer Vision.
-                Whether you have a question or just want to say hi, I'll try my best to get back to you!
-              </p>
-              <ContactForm />
+          {/* Projects Section */}
+          <section id="projects" className="flex items-center py-16">
+            <div className="max-w-4xl">
+              <div className="flex items-center gap-4 mb-8">
+                <h2 className="text-secondary text-4xl font-mono font-bold"># personal_projects</h2>
+                <div className="h-[2px] w-60 bg-muted opacity-80 self-center ml-5" />
+              </div>
+              <div className="text-muted space-y-8 font-mono">
+                <div className="space-y-2">
+                  <h3 className="text-2xl text-accent">UCSB Four Eyes Lab</h3>
+                  <p className="text-xl text-secondary">Decentralized Multi-Robot Mapping and Sensor Fusion</p>
+                  <p className="text-md">
+                    Researching robust multi-view stereo (MVS) schemes for multi-robot applications,
+                    focusing on noise modeling and communication optimization between robots.
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-2xl text-accent">UC3M Computer Architecture Lab</h3>
+                  <p className="text-xl text-secondary">Performance-Oriented Fluid Simulation</p>
+                  <p className="text-md">
+                    Developed high-performance fluid simulation in C++ using CMake, optimizing particle
+                    collisions for realistic behavior in confined spaces.
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-2xl text-accent">UCSB Math Directed Reading Program</h3>
+                  <p className="text-xl text-secondary">Markov-Style State Machines</p>
+                  <p className="text-md">
+                    Researched Markovian Models for partially observing agents, presenting findings
+                    in poster sessions.
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
+          {/* Publications Section */}
+          <section id="publications" className="flex items-center py-16">
+            <div className="max-w-4xl">
+              <div className="flex items-center gap-4 mb-8">
+                <h2 className="text-secondary text-4xl font-mono font-bold"># publications</h2>
+                <div className="h-[2px] w-60 bg-muted opacity-80 self-center ml-5" />
+              </div>
+              <div className="text-muted space-y-4 font-mono text-lg">
+                <p>
+                  Publications coming soon!
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Contact Section */}
+          <section id="contact" className="flex items-center py-16">
+            <div className="max-w-4xl w-full">
+              <div className="flex items-center gap-4 mb-8">
+                <h2 className="text-secondary text-4xl font-mono font-bold"># contact_me</h2>
+                <div className="h-[2px] w-60 bg-muted opacity-80 self-center ml-5" />
+              </div>
+              <div className="text-muted space-y-6 font-mono">
+                <p className="text-md">
+                  I'm currently looking for new opportunities in AI/ML and Computer Vision.
+                  Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                </p>
+                <ContactForm />
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   );

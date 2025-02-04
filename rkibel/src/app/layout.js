@@ -12,8 +12,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Ron Kibel",
+  title: "rkibel",
   description: "Ron Kibel's Portfolio",
+  icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({ children }) {
