@@ -3,6 +3,10 @@ import React, { } from 'react';
 const Projects = () => {
     return (
         <>
+        <div className='mx-40 bg-black h-40'>
+
+
+        </div>
         <div className="py-5">
             <h2>CGS, MGS, and Reorthogonalization Techniques</h2>
             <h4>UC Santa Barbara</h4>

@@ -14,9 +14,9 @@ const Section = ({ id, c_from, c_to, title, pl, pr }) => {
 
   return (
     <>
-      <div className={`h-28 bg-gradient-to-b ${grad_from} ${grad_to}`} id={id}></div>
+      <div className={`relative h-28 bg-gradient-to-b ${grad_from} ${grad_to}`} id={id}></div>
       <div className={`${bg}`} style={setPadding}>
-        <h1 className="text-4xl font-bold text-slate-600 text-center">{title}</h1>
+        <h1 className="text-4xl font-bold text-slate-600 text-center py-12">{title}</h1>
         {id === "experience" && <WorkCardList/>}
         {id === "projects" && <Projects/>}
         {id === "contact" && <ContactForm/>}
