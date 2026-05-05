@@ -20,7 +20,8 @@ const ContactForm = () => {
             });
 
             if (!response.ok) {
-                throw new Error('Failed to send message.');
+                const errorBody = await response.json().catch(() => ({}));
+                throw new Error(errorBody.error || 'Failed to send message.');
             }
 
             setMessages(prevMessages => [
