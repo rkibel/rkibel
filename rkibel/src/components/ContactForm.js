@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
 import EmailPopup from './EmailPopup';
 
 const ContactForm = () => {
@@ -12,7 +11,18 @@ const ContactForm = () => {
 
     const onSubmit = async (data) => {
         try {
-            await axios.post('/api/send-email', data);
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to send message.');
+            }
+
             setMessages(prevMessages => [
                 ...prevMessages,
                 { id: Date.now(), success: true }
@@ -29,19 +39,19 @@ const ContactForm = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit(onSubmit)} className="w-full py-8">
+            <form onSubmit={handleSubmit(onSubmit)} className="w-full">
                 <div className="mb-4">
-                    <label htmlFor="name" className="block text-md font-medium text-secondary">Full Name *</label>
+                    <label htmlFor="name" className="block text-sm font-medium text-slate-200">Full Name *</label>
                     <input
                         type="text"
                         id="name"
                         {...register('name', { required: 'Name is required.' })}
-                        className="mt-1 block w-full px-3 py-2 bg-transparent border border-muted rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent text-white"
+                        className="mt-2 block w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white shadow-sm outline-none transition placeholder:text-slate-600 focus:border-cyan-300/70 focus:ring-2 focus:ring-cyan-300/20"
                     />
-                    {errors.name && <span className="text-accent text-xs">{errors.name.message}</span>}
+                    {errors.name && <span className="text-cyan-200 text-xs">{errors.name.message}</span>}
                 </div>
                 <div className="mb-4">
-                    <label htmlFor="email" className="block text-md font-medium text-secondary">Email *</label>
+                    <label htmlFor="email" className="block text-sm font-medium text-slate-200">Email *</label>
                     <input
                         type="text"
                         id="email"
@@ -49,33 +59,33 @@ const ContactForm = () => {
                             required: 'Email is required.',
                             pattern: { value: emailRegex, message: "Please enter a valid email address." }
                         })}
-                        className="mt-1 block w-full px-3 py-2 bg-transparent border border-muted rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent text-white"
+                        className="mt-2 block w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white shadow-sm outline-none transition placeholder:text-slate-600 focus:border-cyan-300/70 focus:ring-2 focus:ring-cyan-300/20"
                     />
-                    {errors.email && <span className="text-accent text-xs">{errors.email.message}</span>}
+                    {errors.email && <span className="text-cyan-200 text-xs">{errors.email.message}</span>}
                 </div>
                 <div className="mb-4">
-                    <label htmlFor="subject" className="block text-md font-medium text-secondary">Subject</label>
+                    <label htmlFor="subject" className="block text-sm font-medium text-slate-200">Subject</label>
                     <input
                         type="text"
                         id="subject"
                         {...register('subject')}
-                        className="mt-1 block w-full px-3 py-2 bg-transparent border border-muted rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent text-white"
+                        className="mt-2 block w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white shadow-sm outline-none transition placeholder:text-slate-600 focus:border-cyan-300/70 focus:ring-2 focus:ring-cyan-300/20"
                     />
                 </div>
                 <div className="mb-4">
-                    <label htmlFor="message" className="block text-md font-medium text-secondary">Message *</label>
+                    <label htmlFor="message" className="block text-sm font-medium text-slate-200">Message *</label>
                     <textarea
                         id="message"
                         {...register('message', { required: 'Message is required.' })}
                         rows="4"
-                        className="mt-1 block w-full px-3 py-2 bg-transparent border border-muted rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent text-white"
+                        className="mt-2 block w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white shadow-sm outline-none transition placeholder:text-slate-600 focus:border-cyan-300/70 focus:ring-2 focus:ring-cyan-300/20"
                     />
-                    {errors.message && <span className="text-accent text-xs">{errors.message.message}</span>}
+                    {errors.message && <span className="text-cyan-200 text-xs">{errors.message.message}</span>}
                 </div>
                 <div className="mt-4">
                     <button
                         type="submit"
-                        className="px-6 py-3 border-2 border-accent text-accent hover:bg-accent hover:text-primary transition-colors font-mono"
+                        className="rounded-full bg-cyan-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-100"
                     >
                         Send Message
                     </button>

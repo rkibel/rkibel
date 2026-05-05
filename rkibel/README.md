@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ron Kibel Portfolio App
 
-## Getting Started
+Next.js portfolio site for Ron Kibel, focused on Computer Vision, Spatial Computing, and AI engineering.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This app is designed as a polished technical portfolio for recruiters and engineering teams. It highlights:
+
+- Real-time perception, 3D geometry, multimodal AI, and AR systems
+- Google Beam camera and graphics systems work
+- ServiceNow AI Search multimodal retrieval work
+- Spatial AI and Computer Vision projects including POINTER
+- UCSB MS/BS education, valedictorian recognition, and technical skills
+
+## Tech Stack
+
+- Next.js 15 App Router
+- React 19
+- Tailwind CSS
+- `next/font` with Geist and Geist Mono
+- `react-hook-form`, Axios, and Nodemailer for the contact form
+
+## Structure
+
+```text
+src/app/
+  page.js                 Main page composition
+  layout.js               Metadata and root layout
+  globals.css             Global styles and motion preferences
+  api/send-email/route.js Contact form API route
+
+src/components/
+  ContactForm.js
+  EmailPopup.js
+  portfolio/
+    Hero.js
+    CVVisualBackground.js
+    About.js
+    Experience.js
+    Projects.js
+    ProjectVisual.js
+    Skills.js
+    Education.js
+    ContactFooter.js
+    data.js
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Content Sources
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Portfolio content is centralized in `src/components/portfolio/data.js`. Static assets live in `public/`, including:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `resume.pdf`
+- `profile.png`
+- `logo.png`
 
-## Learn More
+## Quality Notes
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Layouts use responsive grids and flexible wrapping for mobile, tablet, laptop, and wide displays.
+- Motion is disabled or minimized when `prefers-reduced-motion` is enabled.
+- Interactive project details use native buttons with `aria-expanded`.
+- External links and resume links include appropriate target and rel attributes.

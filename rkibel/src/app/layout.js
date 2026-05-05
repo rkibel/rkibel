@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "rkibel",
-  description: "Ron Kibel's Portfolio",
+  title: "Ron Kibel | Computer Vision Engineer",
+  description: "Computer Vision, Spatial Computing, and AI portfolio for Ron Kibel.",
   icons: {
     icon: '/logo.png',
   },
