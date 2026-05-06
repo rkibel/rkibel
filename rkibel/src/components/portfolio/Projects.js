@@ -34,13 +34,6 @@ export default function Projects() {
             </span>
           ))}
         </div>
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {project.methods.map((method) => (
-            <span key={method} className="rounded-full border border-white/10 bg-slate-950/45 px-2.5 py-1 font-mono text-[0.68rem] text-slate-400">
-              {method}
-            </span>
-          ))}
-        </div>
       </div>
     </div>
   );

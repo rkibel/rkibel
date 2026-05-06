@@ -47,7 +47,6 @@ export const projects = [
     summary:
       "A Real-Time Framework for Dynamic, Object-Centered Augmented Reality",
     areas: ["Object-Centered AR", "6DoF Pose", "Vision-Language Models"],
-    methods: ["sparse RGB scanning", "real-time tracking", "edge-server architecture"],
     impact:
       "Explores practical interfaces where digital instructions and context stay attached to the physical objects users manipulate.",
     visual: "pointer",
@@ -59,7 +58,6 @@ export const projects = [
     summary:
       "Deep learning pipeline for temporally consistent egocentric indoor scene simplification for retinal prostheses.",
     areas: ["Bionic Vision", "Scene Simplification", "Temporal Consistency"],
-    methods: ["segmentation refinement", "saliency", "depth estimation", "phosphene simulation"],
     impact:
       "Reduces flicker, fragmentation, and visual overload in low-resolution prosthetic vision settings.",
     visual: "bionic",
@@ -70,7 +68,6 @@ export const projects = [
     summary:
       "Graph-based multi-robot perception framework for depth prediction and semantic segmentation.",
     areas: ["3D Reconstruction", "Multi-Robot Perception", "Semantic Segmentation"],
-    methods: ["graph attention networks", "message passing", "masked attention", "monocular depth"],
     impact:
       "Fuses geometric and semantic cues across robot communication graphs for more robust scene understanding.",
     visual: "robots",
@@ -81,7 +78,6 @@ export const projects = [
     summary:
       "Benchmark study comparing ahead-of-time and just-in-time compilation strategies across deep learning runtimes.",
     areas: ["Deep Learning Systems", "AOT Compilation", "JIT Compilation"],
-    methods: ["CNN/RNN benchmarks", "latency profiling", "memory analysis"],
     impact:
       "Shows that runtime performance is architecture- and batch-size-dependent.",
     visual: "aot",
@@ -92,7 +88,6 @@ export const projects = [
     summary:
       "Examining reward design and mitigation strategies for unintended optimization behavior in reinforcement learning.",
     areas: ["Reinforcement Learning", "Reward Design", "AI Safety"],
-    methods: ["reward curves", "agent behavior", "failure analysis", "mitigation strategies"],
     impact:
       "Focuses on making learned behavior better aligned with intended task outcomes instead of proxy rewards.",
     visual: "reward",
