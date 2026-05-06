@@ -3,16 +3,16 @@ import SectionHeader from "./SectionHeader";
 
 export default function ContactFooter() {
   return (
-    <footer id="contact" className="relative px-4 pb-10 pt-20 sm:px-6 lg:px-8">
+    <footer id="contact" className="relative px-4 pb-8 pt-12 sm:px-6 lg:px-8">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/30 to-transparent" />
       <div className="mx-auto max-w-7xl">
         <SectionHeader eyebrow="Contact" title="Contact" />
         <div className="mx-auto max-w-3xl">
-          <div className="rounded-3xl border border-white/10 bg-slate-950/50 p-4 sm:p-6">
+          <div className="rounded-2xl border border-white/10 bg-slate-950/50 p-4">
             <ContactForm />
           </div>
         </div>
-        <div className="mt-12 border-t border-white/10 pt-6">
+        <div className="mt-8 border-t border-white/10 pt-5">
           <div className="flex flex-col gap-3 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
             <p>&copy; 2026 Ron Kibel. All rights reserved.</p>
             <div className="flex flex-wrap gap-x-4 gap-y-2">

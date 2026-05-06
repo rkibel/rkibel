@@ -72,16 +72,41 @@ function RewardVisual() {
   );
 }
 
+function AOTVisual() {
+  return (
+    <svg viewBox="0 0 320 220" className="h-full w-full" role="img" aria-label="AOT and JIT compilation benchmark paths">
+      <defs>
+        <linearGradient id="compileFlow" x1="0" x2="1">
+          <stop stopColor="#22d3ee" />
+          <stop offset="1" stopColor="#a78bfa" />
+        </linearGradient>
+      </defs>
+      <path d="M42 72 H116 C136 72 136 104 156 104 H226" stroke="#67e8f9" strokeWidth="3" fill="none" strokeLinecap="round" />
+      <path d="M42 148 H112 C132 148 136 116 158 116 H226" stroke="#a78bfa" strokeWidth="3" fill="none" strokeLinecap="round" strokeDasharray="7 8" />
+      <rect x="34" y="50" width="58" height="44" rx="8" fill="#22d3ee" fillOpacity=".14" stroke="#67e8f9" />
+      <rect x="226" y="82" width="62" height="56" rx="8" fill="#34d399" fillOpacity=".14" stroke="#34d399" />
+      <circle cx="160" cy="110" r="23" fill="url(#compileFlow)" fillOpacity=".22" stroke="url(#compileFlow)" />
+      <path d="M151 110 h18 M160 101 v18" stroke="#e0f2fe" strokeWidth="2" strokeLinecap="round" />
+      <path d="M56 72 h20 M244 101 h26 M244 119 h18" stroke="#e0f2fe" strokeOpacity=".82" strokeWidth="2" strokeLinecap="round" />
+      {[0, 1, 2, 3].map((index) => (
+        <circle key={index} cx={86 + index * 42} cy={178 - index * 14} r="3" fill={index % 2 ? "#a78bfa" : "#22d3ee"} opacity=".9" />
+      ))}
+      <path d="M86 178 L128 164 L170 150 L212 136" stroke="#34d399" strokeOpacity=".58" strokeWidth="2" fill="none" />
+    </svg>
+  );
+}
+
 export default function ProjectVisual({ type }) {
   const visuals = {
     pointer: <PointerVisual />,
     bionic: <BionicVisual />,
     robots: <RobotsVisual />,
+    aot: <AOTVisual />,
     reward: <RewardVisual />,
   };
 
   return (
-    <div className="project-visual h-48 overflow-hidden rounded-2xl border border-white/10 bg-slate-950/60 p-3">
+    <div className="project-visual h-36 overflow-hidden rounded-xl border border-white/10 bg-slate-950/60 p-2 sm:h-40">
       {visuals[type]}
     </div>
   );

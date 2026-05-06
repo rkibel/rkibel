@@ -50,7 +50,7 @@ src/components/
 Portfolio content is centralized in `src/components/portfolio/data.js`. Static assets live in `public/`, including:
 
 - `resume.pdf`
-- `profile.png`
+- `profile.jpg`
 - `logo.png`
 
 ## Quality Notes

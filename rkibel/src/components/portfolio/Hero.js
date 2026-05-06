@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import profilePhoto from "../../../public/profile.jpg";
 import CVVisualBackground from "./CVVisualBackground";
 
 function scrollTo(id) {
@@ -17,10 +18,10 @@ export default function Hero() {
       <div className="relative mx-auto grid min-h-[calc(100svh-6rem)] max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
         <div className="max-w-3xl">
           <h1 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Computer Vision Engineer building spatial AI systems.
+            Hi, I&apos;m Ron.
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-            Real-time perception, 3D geometry, multimodal AI, and AR.
+            I build spatial AI systems.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <button onClick={() => scrollTo("#projects")} className="rounded-full bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-100">
@@ -39,7 +40,16 @@ export default function Hero() {
           <div className="absolute -inset-4 rounded-[2rem] border border-cyan-300/20 bg-cyan-300/5 blur-xl" />
           <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950/60 p-3 shadow-2xl shadow-cyan-950/30 backdrop-blur">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1rem]">
-              <Image src="/profile.png" alt="Ron Kibel" fill sizes="(max-width: 1024px) 90vw, 36vw" className="object-cover object-top saturate-[0.92]" priority />
+              <Image
+                src={profilePhoto}
+                alt="Ron Kibel"
+                fill
+                sizes="(max-width: 640px) 92vw, (max-width: 1024px) 50vw, 34vw"
+                className="object-cover object-top saturate-[0.96]"
+                priority
+                placeholder="blur"
+                quality={86}
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
               <div className="absolute left-5 top-5 h-20 w-28 border border-cyan-300/70" />
               <div className="absolute bottom-8 right-6 h-24 w-32 border border-emerald-300/70" />

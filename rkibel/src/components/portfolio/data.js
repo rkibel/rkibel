@@ -1,5 +1,4 @@
 export const navItems = [
-  { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
@@ -18,47 +17,26 @@ export const experiences = [
   {
     company: "Google Beam",
     role: "Student Researcher",
-    dates: "05/2025 - 09/2025",
-    location: "Mountain View, CA",
+    dates: "May → September 2025",
     accent: "cyan",
     summary:
-      "Built camera visualization and diagnostics tooling for a zero-copy, hardware-accelerated graphics pipeline.",
-    bullets: [
-      "Developed a ChromeOS camera visualization tool around OpenGL, VA-API, and DRM.",
-      "Supported diagnostics for hardware ML face detection, triangulation, and multi-camera debugging.",
-      "Worked close to real-time camera and graphics systems where latency, copies, and observability matter.",
-    ],
-    tags: ["OpenGL", "VA-API", "DRM", "ChromeOS", "Hardware ML", "Multi-camera"],
+      "Engineered camera ML tooling for a zero-copy, hardware-accelerated graphics pipeline.",
   },
   {
     company: "ServiceNow",
-    role: "Software Engineering Intern, AI Search",
-    dates: "05/2024 - 09/2024",
-    location: "Santa Clara, CA",
+    role: "SWE, AI Search",
+    dates: "May → September 2024",
     accent: "emerald",
     summary:
-      "Extended AI Search with multimodal retrieval across text-to-image and image-to-image workflows.",
-    bullets: [
-      "Integrated mixed-media indexing using Apache Tika, OpenCV, and CLIP embeddings.",
-      "Built retrieval paths for text-to-image and image-to-image search experiences.",
-      "Connected document extraction, visual features, and embedding search into production-oriented systems.",
-    ],
-    tags: ["Apache Tika", "OpenCV", "CLIP", "Embeddings", "Multimodal Search"],
+      "Built multimodal retrieval for text-to-image and image-to-image workflows.",
   },
   {
     company: "ServiceNow",
-    role: "Software Engineering Intern, Developer Productivity",
-    dates: "05/2022 - 09/2023",
-    location: "Santa Clara, CA",
+    role: "SWE, Developer Productivity",
+    dates: "May 2022 → September 2023",
     accent: "violet",
     summary:
-      "Created and deployed static code scan automation for developer productivity teams.",
-    bullets: [
-      "Reduced analyzer turnaround from roughly 3 months to days through automation.",
-      "Supported creation and deployment workflows for 1000+ static code scan analyzers.",
-      "Built with Java, Maven, and Jenkins CI/CD in a large engineering organization.",
-    ],
-    tags: ["Java", "Maven", "Jenkins", "CI/CD", "Static Analysis"],
+      "Created and deployed static code scan automation for all engineering orgs.",
   },
 ];
 
@@ -67,38 +45,52 @@ export const projects = [
     title: "POINTER",
     kicker: "Featured",
     summary:
-      "Real-time AR framework that combines 6DoF pose estimation and vision-language models to anchor digital content to dynamic physical objects.",
-    areas: ["AR", "6DoF Pose", "Vision-Language Models", "Object Anchors"],
-    methods: ["real-time perception", "pose axes", "object-centric interaction", "spatial grounding"],
+      "A Real-Time Framework for Dynamic, Object-Centered Augmented Reality",
+    areas: ["Object-Centered AR", "6DoF Pose", "Vision-Language Models"],
+    methods: ["sparse RGB scanning", "real-time tracking", "edge-server architecture"],
     impact:
       "Explores practical interfaces where digital instructions and context stay attached to the physical objects users manipulate.",
     visual: "pointer",
+    href: "/projects/pointer-object-centered-ar.pdf",
     featured: true,
   },
   {
-    title: "Temporal Scene Simplification for Bionic Vision Prostheses",
+    title: "Temporally-Aware Scene Simplification for Bionic Vision",
     summary:
-      "Scene simplification pipeline using saliency mapping, instance segmentation, and depth estimation for prosthetic vision research.",
-    areas: ["Bionic Vision", "Segmentation", "Depth", "Saliency"],
-    methods: ["saliency maps", "instance masks", "depth cues", "temporal filtering"],
+      "Deep learning pipeline for temporally consistent egocentric indoor scene simplification for retinal prostheses.",
+    areas: ["Bionic Vision", "Scene Simplification", "Temporal Consistency"],
+    methods: ["segmentation refinement", "saliency", "depth estimation", "phosphene simulation"],
     impact:
-      "Targets visual overload by prioritizing scene information that could matter most to prosthetic vision users.",
+      "Reduces flicker, fragmentation, and visual overload in low-resolution prosthetic vision settings.",
     visual: "bionic",
+    href: "/projects/temporally-aware-bionic-vision.pdf",
   },
   {
     title: "Semantic 3D Reconstruction from Multi-Robot Systems",
     summary:
-      "Drone-swarm reconstruction project focused on communication graphs, robustness to noise, and semantic 3D mapping.",
-    areas: ["3D Reconstruction", "Multi-Robot Systems", "Sensor Fusion"],
-    methods: ["point clouds", "communication graph", "noise robustness", "multi-view geometry"],
+      "Graph-based multi-robot perception framework for depth prediction and semantic segmentation.",
+    areas: ["3D Reconstruction", "Multi-Robot Perception", "Semantic Segmentation"],
+    methods: ["graph attention networks", "message passing", "masked attention", "monocular depth"],
     impact:
-      "Studies how teams of robots can reconstruct shared environments under realistic sensing and communication constraints.",
+      "Fuses geometric and semantic cues across robot communication graphs for more robust scene understanding.",
     visual: "robots",
+    href: "/projects/semantic-3d-reconstruction-multi-robot.pdf",
+  },
+  {
+    title: "AheadOfItsTime: AOT vs JIT Compilation",
+    summary:
+      "Benchmark study comparing ahead-of-time and just-in-time compilation strategies across deep learning runtimes.",
+    areas: ["Deep Learning Systems", "AOT Compilation", "JIT Compilation"],
+    methods: ["CNN/RNN benchmarks", "latency profiling", "memory analysis"],
+    impact:
+      "Shows that runtime performance is architecture- and batch-size-dependent.",
+    visual: "aot",
+    href: "/projects/aot-vs-jit-deep-learning.pdf",
   },
   {
     title: "Mitigating Reward Hacking",
     summary:
-      "Reinforcement learning project examining reward design and mitigation strategies for unintended optimization behavior.",
+      "Examining reward design and mitigation strategies for unintended optimization behavior in reinforcement learning.",
     areas: ["Reinforcement Learning", "Reward Design", "AI Safety"],
     methods: ["reward curves", "agent behavior", "failure analysis", "mitigation strategies"],
     impact:
@@ -130,19 +122,19 @@ export const education = [
   {
     degree: "MS, Computer Science",
     school: "UC Santa Barbara",
-    dates: "12/2024 - 12/2025",
+    dates: "December 2024 → December 2025",
     details: ["4.0 GPA", "Computer Vision", "Deep Learning"],
   },
   {
     degree: "BS, Computer Science",
     school: "UC Santa Barbara",
-    dates: "09/2021 - 12/2024",
+    dates: "September 2021 → December 2024",
     details: ["4.0 GPA", "Valedictorian, UCSB Class of 2025"],
   },
   {
     degree: "BS, Applied Mathematics",
     school: "UC Santa Barbara",
-    dates: "09/2021 - 12/2024",
+    dates: "September 2021 → December 2024",
     details: ["4.0 GPA", "Valedictorian, UCSB Class of 2025"],
   },
 ];
